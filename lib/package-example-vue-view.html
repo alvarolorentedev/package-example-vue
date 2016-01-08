@@ -1,4 +1,5 @@
 <atom-panel class='modal'>
   <input class="user-input native-key-bindings" type="text" v-model="word" v-on:keyup.enter="onCount">
-  <div class='message'> regex {{ word }} found {{ times }} times </div>
+  <div class='message' v-show="!isFound"> Word not found or search not started </div>
+  <div class='message' v-show="isFound"> regex {{ word }} found {{ times }} times </div>
 </atom-panel>
