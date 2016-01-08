@@ -2,19 +2,19 @@
 'context-menu':
   'atom-text-editor': [
     {
-      'label': 'Toggle package-template-vue'
-      'command': 'package-template-vue:toggle'
+      'label': 'Toggle package-example-vue'
+      'command': 'package-example-vue:toggle'
     }
   ]
 'menu': [
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'package-template-vue'
+      'label': 'package-example-vue'
       'submenu': [
         {
           'label': 'Toggle'
-          'command': 'package-template-vue:toggle'
+          'command': 'package-example-vue:toggle'
         }
       ]
     ]

@@ -1,40 +1,40 @@
-PackageTemplateVue = require '../lib/package-template-vue'
+PackageExampleVue = require '../lib/package-example-vue'
 
 # Use the command `window:run-package-specs` (cmd-alt-ctrl-p) to run specs.
 #
 # To run a specific `it` or `describe` block add an `f` to the front (e.g. `fit`
 # or `fdescribe`). Remove the `f` to unfocus the block.
 
-describe "PackageTemplateVue", ->
+describe "PackageExampleVue", ->
   [workspaceElement, activationPromise] = []
 
   beforeEach ->
     workspaceElement = atom.views.getView(atom.workspace)
-    activationPromise = atom.packages.activatePackage('package-template-vue')
+    activationPromise = atom.packages.activatePackage('package-example-vue')
 
-  describe "when the package-template-vue:toggle event is triggered", ->
+  describe "when the package-example-vue:toggle event is triggered", ->
     it "hides and shows the modal panel", ->
       # Before the activation event the view is not on the DOM, and no panel
       # has been created
-      expect(workspaceElement.querySelector('.package-template-vue')).not.toExist()
+      expect(workspaceElement.querySelector('.package-example-vue')).not.toExist()
 
       # This is an activation event, triggering it will cause the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'package-template-vue:toggle'
+      atom.commands.dispatch workspaceElement, 'package-example-vue:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
-        expect(workspaceElement.querySelector('.package-template-vue')).toExist()
+        expect(workspaceElement.querySelector('.package-example-vue')).toExist()
 
-        packageTemplateVueElement = workspaceElement.querySelector('.package-template-vue')
-        expect(packageTemplateVueElement).toExist()
+        packageExampleVueElement = workspaceElement.querySelector('.package-example-vue')
+        expect(packageExampleVueElement).toExist()
 
-        packageTemplateVuePanel = atom.workspace.panelForItem(packageTemplateVueElement)
-        expect(packageTemplateVuePanel.isVisible()).toBe true
-        atom.commands.dispatch workspaceElement, 'package-template-vue:toggle'
-        expect(packageTemplateVuePanel.isVisible()).toBe false
+        packageExampleVuePanel = atom.workspace.panelForItem(packageExampleVueElement)
+        expect(packageExampleVuePanel.isVisible()).toBe true
+        atom.commands.dispatch workspaceElement, 'package-example-vue:toggle'
+        expect(packageExampleVuePanel.isVisible()).toBe false
 
     it "hides and shows the view", ->
       # This test shows you an integration test testing at the view level.
@@ -45,18 +45,18 @@ describe "PackageTemplateVue", ->
       # workspaceElement to the DOM are generally slower than those off DOM.
       jasmine.attachToDOM(workspaceElement)
 
-      expect(workspaceElement.querySelector('.package-template-vue')).not.toExist()
+      expect(workspaceElement.querySelector('.package-example-vue')).not.toExist()
 
       # This is an activation event, triggering it causes the package to be
       # activated.
-      atom.commands.dispatch workspaceElement, 'package-template-vue:toggle'
+      atom.commands.dispatch workspaceElement, 'package-example-vue:toggle'
 
       waitsForPromise ->
         activationPromise
 
       runs ->
         # Now we can test for view visibility
-        packageTemplateVueElement = workspaceElement.querySelector('.package-template-vue')
-        expect(packageTemplateVueElement).toBeVisible()
-        atom.commands.dispatch workspaceElement, 'package-template-vue:toggle'
-        expect(packageTemplateVueElement).not.toBeVisible()
+        packageExampleVueElement = workspaceElement.querySelector('.package-example-vue')
+        expect(packageExampleVueElement).toBeVisible()
+        atom.commands.dispatch workspaceElement, 'package-example-vue:toggle'
+        expect(packageExampleVueElement).not.toBeVisible()

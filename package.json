@@ -1,19 +1,20 @@
 {
-  "name": "package-template-vue",
-  "main": "./lib/package-template-vue",
+  "name": "package-example-vue",
+  "main": "./lib/package-example-vue",
   "version": "0.0.0",
   "description": "A short description of your package",
   "keywords": [
   ],
   "activationCommands": {
-    "atom-workspace": "package-template-vue:toggle"
+    "atom-workspace": "package-example-vue:toggle"
   },
-  "repository": "https://github.com/atom/package-template-vue",
+  "repository": "https://github.com/atom/package-example-vue",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "vue": "^1.0.12-csp"
+    "vue": "^1.0.12-csp",
+    "loophole": "^1.1.0"
   }
 }

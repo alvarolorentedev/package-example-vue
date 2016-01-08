@@ -1,4 +1,4 @@
-PackageTemplateVueView = require '../lib/package-template-vue-view'
+PackageTemplateVueView = require '../lib/package-example-vue-view'
 
 describe "PackageTemplateVueView", ->
   it "has one valid test", ->

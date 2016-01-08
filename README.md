@@ -1,4 +1,4 @@
-# package-template-vue package
+# package-example-vue package
 
 A short description of your package.
 
