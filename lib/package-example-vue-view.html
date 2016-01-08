@@ -1,1 +1,4 @@
-<div class='message'> {{ message }} </div>
+<atom-panel class='modal'>
+  <input class="user-input native-key-bindings" type="text" v-model="word" v-on:keyup.enter="onCount">
+  <div class='message'> regex {{ word }} found {{ times }} times </div>
+</atom-panel>
